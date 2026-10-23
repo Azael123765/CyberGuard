@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligencia de amenazas con IA | CyberGuard</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    :root {
+      --fondo: #031824;
+      --panel: #071f2b;
+      --panel-claro: #0a2937;
+      --turquesa: #00d9ee;
+      --turquesa-suave: #6deaf5;
+      --texto: #f3f8fc;
+      --texto-suave: #b9cfdb;
+      --borde: #007f91;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    body {
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .barra {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px; padding: 20px max(5%, calc((100% - 1250px) / 2));
+      border-bottom: 1px solid #0a3443; background: #041a26;
+    }
+    .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icono { color: var(--turquesa); font-size: 35px; line-height: 1; }
+    .logo strong { display: block; letter-spacing: 1px; font-size: 20px; }
+    .logo strong span { color: var(--turquesa); }
+    .logo small { display: block; color: var(--texto-suave); font-size: 9px; letter-spacing: 2.5px; }
+    .volver {
+      display: inline-block; color: var(--turquesa); text-decoration: none;
+      border: 1px solid var(--borde); border-radius: 8px; padding: 10px 16px;
+      font-weight: 700; transition: .2s;
+    }
+    .volver:hover, .boton:hover { background: var(--turquesa); color: #031824; }
+    .contenedor { width: min(1120px, 90%); margin: 0 auto; }
+    .hero { padding: 82px 0 70px; border-bottom: 1px solid #0a3443; }
+    .etiqueta { color: var(--turquesa); font-size: 12px; font-weight: 800; letter-spacing: 2px; margin-bottom: 15px; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: 1.12; max-width: 850px; margin-bottom: 22px; }
+    h1 span, h2 span { color: var(--turquesa); }
+    .intro { color: var(--texto-suave); font-size: 1.1rem; max-width: 760px; }
+    .hero-acciones { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .boton { display: inline-block; padding: 12px 18px; border: 1px solid var(--turquesa); border-radius: 8px; text-decoration: none; font-weight: 700; transition: .2s; }
+    .boton-principal { background: var(--turquesa); color: #031824; }
+    .boton-secundario { color: var(--turquesa); }
+    section { padding: 64px 0; }
+    .titulo-seccion { font-size: clamp(1.7rem, 3vw, 2.5rem); margin-bottom: 14px; line-height: 1.2; }
+    .texto-seccion { color: var(--texto-suave); max-width: 790px; margin-bottom: 28px; }
+    .rejilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .tarjeta {
+      background: var(--panel); border: 1px solid var(--borde); border-radius: 12px;
+      padding: 24px; min-width: 0;
+    }
+    .icono { color: var(--turquesa); font-size: 28px; margin-bottom: 10px; }
+    h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .tarjeta p, .paso p { color: var(--texto-suave); font-size: .96rem; }
+    .flujo { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: pasos; }
+    .paso { padding: 20px; border-radius: 10px; background: var(--panel-claro); border: 1px solid #075466; }
+    .numero { color: var(--turquesa); font-size: 13px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
+    .nota { padding: 20px 22px; border-left: 3px solid var(--turquesa); background: #071f2b; color: var(--texto-suave); border-radius: 0 8px 8px 0; }
+    .cierre { text-align: center; background: #061e2b; border-top: 1px solid #0a3443; border-bottom: 1px solid #0a3443; }
+    .cierre .texto-seccion { margin-left: auto; margin-right: auto; }
+    footer { color: #94afbd; text-align: center; padding: 24px 5%; font-size: .9rem; }
+    @media (max-width: 800px) {
+      .rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .flujo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .barra { padding: 16px 5%; }
+    }
+    @media (max-width: 540px) {
+      .barra { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .rejilla, .flujo { grid-template-columns: 1fr; }
+      .hero { padding: 58px 0 48px; }
+      section { padding: 46px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="barra">
+    <a class="logo" href="index.html" aria-label="CyberGuard, página principal">
+      <span class="logo-icono">⬡</span>
+      <span><strong>CYBER<span>GUARD</span></strong><small>SECURITY SOLUTIONS</small></span>
+    </a>
+    <a class="volver" href="cybeGuard.html">← Volver al inicio</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor">
+        <p class="etiqueta">SOLUCIONES CYBERGUARD / CIBERSEGURIDAD</p>
+        <h1>Inteligencia de amenazas <span>con IA</span></h1>
+        <p class="intro">Anticiparse a los riesgos digitales es una parte importante de la ciberseguridad. La inteligencia de amenazas reúne y analiza información sobre posibles ataques para ayudar a las organizaciones a tomar decisiones mejor informadas.</p>
+        <div class="hero-acciones">
+          <a class="boton boton-principal" href="#como-funciona">Cómo funciona ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contenedor">
+        <p class="etiqueta">CONCEPTOS CLAVE</p>
+        <h2 class="titulo-seccion">¿Qué es la <span>inteligencia de amenazas?</span></h2>
+        <p class="texto-seccion">Es el proceso de recopilar, estudiar y contextualizar información sobre amenazas digitales, como campañas de phishing, programas maliciosos o intentos de acceso no autorizado. La inteligencia artificial puede apoyar este trabajo al encontrar patrones y revisar grandes cantidades de datos.</p>
+        <div class="rejilla">
+          <article class="tarjeta">
+            <div class="icono">⌕</div>
+            <h3>Detección de patrones</h3>
+            <p>Los sistemas de análisis pueden señalar comportamientos inusuales que merecen ser revisados por el equipo de seguridad.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">⬡</div>
+            <h3>Contexto de las amenazas</h3>
+            <p>La información recopilada ayuda a comprender qué puede estar ocurriendo, qué activos podrían estar en riesgo y qué tan urgente es investigar.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">◎</div>
+            <h3>Apoyo a las decisiones</h3>
+            <p>Los resultados permiten priorizar revisiones y planificar medidas preventivas con base en la evidencia disponible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" style="background:#051c28;border-top:1px solid #0a3443;border-bottom:1px solid #0a3443;">
+      <div class="contenedor">
+        <p class="etiqueta">DEL ANÁLISIS A LA ACCIÓN</p>
+        <h2 class="titulo-seccion">¿Cómo funciona?</h2>
+        <p class="texto-seccion">La IA es una herramienta de apoyo, no una garantía de que todos los ataques se detectarán. Los resultados deben revisarse y combinarse con buenas prácticas de seguridad.</p>
+        <div class="flujo">
+          <article class="paso">
+            <p class="numero">PASO 01</p>
+            <h3>Recopilar</h3>
+            <p>Se reúne información relevante de registros, alertas y fuentes confiables de ciberseguridad.</p>
+          </article>
+          <article class="paso">
+            <p class="numero">PASO 02</p>
+            <h3>Analizar</h3>
+            <p>Las herramientas buscan relaciones, tendencias o actividades que se apartan del comportamiento habitual.</p>
+          </article>
+          <article class="paso">
+            <p class="numero">PASO 03</p>
+            <h3>Priorizar</h3>
+            <p>Se valoran las alertas según el contexto y el posible impacto para evitar tratar todos los avisos como iguales.</p>
+          </article>
+          <article class="paso">
+            <p class="numero">PASO 04</p>
+            <h3>Responder y aprender</h3>
+            <p>El equipo de seguridad investiga, aplica medidas apropiadas y utiliza lo aprendido para mejorar la protección.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contenedor">
+        <p class="etiqueta">BENEFICIOS</p>
+        <h2 class="titulo-seccion">¿Qué puede aportar a una organización?</h2>
+        <p class="texto-seccion">Usada de forma responsable y junto con profesionales de seguridad, la inteligencia de amenazas puede ayudar a mejorar la preparación de una empresa.</p>
+        <div class="rejilla">
+          <article class="tarjeta">
+            <div class="icono">↗</div>
+            <h3>Mayor capacidad de prevención</h3>
+            <p>Permite identificar señales de riesgo y revisar las defensas antes de que ocurra un incidente.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">◷</div>
+            <h3>Mejor priorización</h3>
+            <p>Ayuda a centrar los esfuerzos en alertas y vulnerabilidades que podrían tener mayor impacto.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">▣</div>
+            <h3>Protección de información</h3>
+            <p>Apoya las medidas para cuidar datos, cuentas, dispositivos y servicios importantes para el negocio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="contenedor">
+        <div class="nota"><strong style="color:#6deaf5;">Importante:</strong> la inteligencia artificial puede equivocarse, generar falsas alarmas o no detectar ciertas amenazas. Debe utilizarse con supervisión humana, controles de acceso, protección de datos y un plan de respuesta a incidentes.</div>
+      </div>
+    </section>
+
+    <section class="cierre">
+      <div class="contenedor">
+        <p class="etiqueta">CYBERGUARD</p>
+        <h2 class="titulo-seccion">Una estrategia de seguridad <span>más informada</span></h2>
+        <p class="texto-seccion">Conocer las posibles amenazas es un paso para construir un entorno digital más preparado. Combina análisis, prevención y revisión continua para fortalecer la seguridad.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 CyberGuard. Proyecto escolar.</p>
+    <p>Esta página es informativa y forma parte de una demostración de diseño.</p>
+  </footer>
+</body>
+</html>
